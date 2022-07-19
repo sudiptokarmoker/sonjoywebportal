@@ -1,0 +1,93 @@
+- project initial done
+- make seeder and migration (done)
+
+phase # 1 : (working) deadline : 10.06.2022
+- setup repository pattern at dashbaord (done)
+- module : artists + module : composer
+
+
+- module : versus
+- module : song
+- module : novel 
+- module : story
+- module : plays
+- module : essyes
+
+phase # 2 : deadline 17.06.2022
+- setup apis for data communitcation
+
+phase # 3 : deadline 24.06.2022
+- integration this with backend
+
+==================================================
+- module : artists
+# insert (done)
+# edit (workign)
+# delete (pending)
+
+module : composer
+# insert (done)
+# edit (workign)
+# delete (pending)
+====================================================
+- Tomorrow work on artists edit features (done)
+- delete artists (done)
+- make this clone for composer (done)
+====================================================
+pending module : 
+- song
+- novels
+- stories
+- plays
+task :
+module name song : 
+- plan how this can be done (working)
+=======================================================
+initial setup : 
+- create songs controller backened namspace
+- create songs model backend namespace
+- create songs category controller backend namespace
+- create songs model backend namespace
+
+songs : repository and interface related and connect into contorller (just some basic setup done there) and setup model as well therer: 
+- make songs repositry
+- make songs repository interface
+- make a songs service provider
+- add this to app.php files
+- edit controller
+- prepare model for next work
+- add route in web.php files
+
+songs controller : repository and interface related and connect into contorller (just some basic setup done there) and setup model as well there: 
+- make songs category repositry
+- make songs category repository interface
+- make a songs category service provider
+- add this to app.php files
+- edit controller
+- prepare model for next work (we will now primarily working on posts category model)
+- add route in web.php files
+work on left_side_bar_v2.blade.php files
+- work on files songs category controller to just all setup all initial like posts category controller
+ + work on songs category repo + songs category interface
+ ** end of todays works, tomorrow just work on to check this if works or not (songs category controller + songs category repository)
+ ==============================================================================
+ - Tomorrow work on songs insert (songs category, first work on songs category)
+===============================================================================
+- songs category param
+# id
+==============================================================================
+- insert this songs data to db
+- edit 
+- delete
+=============================================================================
+- artists information store in db (its multiple can be)
+- composer information store in db (single entry)
+- notation image file upload
+- songs done
+- edit all field
+- delete
+
+=======================================================================
+updated on : 19.07.2022
+- just finalize the novels
+- remove all client and server directory and make upload as fresh copy to hosting
