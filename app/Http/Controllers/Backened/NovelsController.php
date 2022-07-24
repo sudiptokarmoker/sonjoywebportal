@@ -62,7 +62,7 @@ class NovelsController extends Controller
             'title_in_english' => 'required|max:255',
             //'content' => 'required',
             'posts_images' => 'image|mimes:jpeg,png,jpg,gif,svg|max:8192',
-            'novel_file' => 'mimes:pdf'
+            'posts_file' => 'mimes:pdf'
         ]);
         try {
             //dd($request->all());
@@ -116,17 +116,10 @@ class NovelsController extends Controller
             abort(403, 'Sorry !! You are Unauthorized to update novels!');
         }
         $request->validate([
-            'category_id' => 'required|max:255',
             'title' => 'required|max:255',
             'title_in_english' => 'required|max:255',
-            'content' => 'required',
-            'rag' => 'max:255',
-            'tal' => 'max:255',
-            'composer_id' => 'integer',
-            'composition_place' => 'max:255',
-            'notation' => 'max:255',
-            'posts_notation_images' => 'image|mimes:jpeg,png,jpg,gif,svg|max:8192',
-            'posts_youtube_video_url' => 'nullable|url'
+            'posts_images' => 'image|mimes:jpeg,png,jpg,gif,svg|max:8192',
+            'posts_file' => 'mimes:pdf'
         ]);
         try {
             $this->novelsObj->update($request->all(), $id);
@@ -149,7 +142,7 @@ class NovelsController extends Controller
         }
         try {
             $this->novelsObj->delete($id);
-            return redirect(route('verses.index'))->with('status', 'Novels deleted successfully!');
+            return redirect(route('novels.index'))->with('status', 'Novels deleted successfully!');
         } catch (\Exception $e) {
             return back()->with('error', $e->getMessage());
         }
@@ -165,10 +158,10 @@ class NovelsController extends Controller
             return Datatables::of($data)
                 ->addIndexColumn()
                 ->addColumn('action', function ($row) {
-                    $btn = '<a class="btn btn-info text-white" href=' . route("verses.edit", $row['id']) . '>Edit</a>';
+                    $btn = '<a class="btn btn-info text-white" href=' . route("novels.edit", $row['id']) . '>Edit</a>';
                     $token = csrf_token();
-                    $btn .= '<a class="btn btn-danger text-white" href=' . route("verses.destroy", $row['id']) . ' onclick="javascript:delete_form_processing(' . $row['id'] . ');">Delete</a>
-                    <form id="delete-form-' . $row['id'] . '" action=' . route('verses.destroy', $row['id']) . ' method="POST" style="display: none;">
+                    $btn .= '<a class="btn btn-danger text-white" href=' . route("novels.destroy", $row['id']) . ' onclick="javascript:delete_form_processing(' . $row['id'] . ');">Delete</a>
+                    <form id="delete-form-' . $row['id'] . '" action=' . route('novels.destroy', $row['id']) . ' method="POST" style="display: none;">
                         <input type="hidden" name="_method" value="DELETE">
                         <input type="hidden" name="_token" value="' . $token . '"></form>';
                     return $btn;

@@ -94,4 +94,4 @@ updated on : 19.07.2022
 ================================
 updated on : 20.07.2022
 - now files is being uploaded
-- now just parse the file get the conetent and split the content into pagination way
+- edit the novels

@@ -12,6 +12,7 @@ class PostsMediaModel extends Model
     protected $fillable = [
         'post_id', // master book table id
         'posts_image',
+        'posts_file',
         'posts_youtube_video_url',
         'posts_notation_images'
     ];
