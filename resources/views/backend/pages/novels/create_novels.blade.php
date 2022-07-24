@@ -41,6 +41,10 @@ Novels Verses
                                 <textarea class="summernote description form-control" name="content" id="description"></textarea>
                                 <label for="description">Content</label>
                             </div>
+                            <div class="form-row">
+                                    <label for="posts_image">Upload Novels Doc Files</label>
+                                    <input type="file" class="form-control-file" id="novel_file" name="novel_file">
+                            </div>
                              <div class="form-row">
                                     <label for="posts_image">Upload Novels Image</label>
                                     <input type="file" class="form-control-file" id="posts_image" name="posts_image">

@@ -30,7 +30,7 @@ class NovelsController extends Controller
         if (is_null($this->user) || !$this->user->hasPermissionTo('novels.list')) {
             abort(403, 'Sorry !! You are Unauthorized to access novels default list page!');
         }
-        return view('backend.pages.novels.index_verses');
+        return view('backend.pages.novels.index_novels');
     }
     /**
      * Show the form for creating a new resource.
@@ -39,14 +39,11 @@ class NovelsController extends Controller
      */
     public function create()
     {
-        $category_lists = $this->novelsObj->getAllNovelsCategoryLists();
         $novelsRootCategoryId = $this->novelsObj->getNovelsCategoryId();
-        $artists_lists = $this->novelsObj->getArtistsListsData();
-        $composer_lists = $this->novelsObj->getComposerListsData();
         if (is_null($this->user) || !$this->user->hasPermissionTo('novels.create.form.view')) {
             abort(403, 'Sorry !! You are Unauthorized to create novels create page!');
         }
-        return view('backend.pages.novels.create_verses', compact('novelsRootCategoryId', 'category_lists', 'artists_lists', 'composer_lists'));
+        return view('backend.pages.novels.create_novels', compact('novelsRootCategoryId'));
     }
     /**
      * Store a newly created resource in storage.
@@ -60,21 +57,12 @@ class NovelsController extends Controller
             abort(403, 'Sorry !! You are unauthorized to store verses!');
         }
         $request->validate([
-            'category_id' => 'required|max:255',
             'root_category_id' => 'required|integer',
             'title' => 'required|max:255',
             'title_in_english' => 'required|max:255',
-            'content' => 'required',
-            'rag' => 'max:255',
-            'tal' => 'max:255',
-            //'composition_time_english' => 'date',
-            'composer_id' => 'integer',
-            //'composition_time_english' => 'integer',
-            //'composition_time_bangla' => 'integer',
-            'composition_place' => 'max:255',
-            'notation' => 'max:255',
-            'posts_notation_images' => 'image|mimes:jpeg,png,jpg,gif,svg|max:8192',
-            'posts_youtube_video_url' => 'nullable|url'
+            //'content' => 'required',
+            'posts_images' => 'image|mimes:jpeg,png,jpg,gif,svg|max:8192',
+            'novel_file' => 'mimes:pdf'
         ]);
         try {
             //dd($request->all());

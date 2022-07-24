@@ -368,6 +368,32 @@
             </li>
         @endcan
         <!-- songs end -->
+
+        <!-- novels start -->
+        @can('novels.list')
+            <li <?php if(Route::currentRouteName() == 'novels' || Route::currentRouteName() == 'novels.edit' || Route::currentRouteName() == 'novels.create'): ?> class="active has_sub" <?php else: ?> class="has_sub" <?php endif; ?>>
+                <a href="javascript:void(0);" class="waves-effect">
+                    <img src="{{ asset('backend/assets_v2/images/icon/novels-icon.png') }}" class="img-fluid"/>
+                    <span>novels</span>
+                    <span class="menu-arrow"></span>
+                </a>
+                <ul>
+                    <li <?php if(Route::currentRouteName() == 'novels' || Route::currentRouteName() == 'novels.edit'): ?> class="active" <?php endif; ?>>
+                        <a href="{{ route('novels.index') }}" class="waves-effect">
+                            <img src="{{ asset('backend/assets_v2/images/icon/profile.svg') }}" class="img-fluid">
+                            <span>Lists</span>
+                        </a>
+                    </li>
+                    <li <?php if(Route::currentRouteName() == 'novels.create'): ?> class="active" <?php endif; ?>>
+                        <a href="{{ route('novels.create') }}" class="waves-effect">
+                            <img src="{{ asset('backend/assets_v2/images/icon/profile.svg') }}" class="img-fluid">
+                            <span>Create</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        @endcan
+        <!-- novels end -->
         </ul>
         <div class="clearfix"></div>
     </div>

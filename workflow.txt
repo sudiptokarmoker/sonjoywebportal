@@ -91,3 +91,7 @@ work on left_side_bar_v2.blade.php files
 updated on : 19.07.2022
 - just finalize the novels
 - remove all client and server directory and make upload as fresh copy to hosting
+================================
+updated on : 20.07.2022
+- now files is being uploaded
+- now just parse the file get the conetent and split the content into pagination way

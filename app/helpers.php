@@ -62,14 +62,37 @@ if (!function_exists('seoUrl')) {
         //get answer
         $response = curl_exec($curlInit);
         curl_close($curlInit);
-        if ($response) return true;
+        if ($response) {
+            return true;
+        }
+
         return false;
+    }
+    // splited text to number of pages
+    function SplitStringToParts($sourceInput, $splitTextByWordCounter = 20)
+    {
+        $arr_exploded = explode(" ", $sourceInput);
+        $result = [];
+        $initial = 0;
+        for ($i = 0; $i < count($arr_exploded); $i++) {
+            $arr_part1 = array_slice($arr_exploded, $initial, $splitTextByWordCounter);
+            $initial += $splitTextByWordCounter;
+            $splitedContent = implode(" ", $arr_part1);
+            if ($splitedContent) {
+                $result[] = $splitedContent;
+            }
+            if (strlen($splitedContent) == 0) {
+                break;
+            }
+        }
+        return $result;
     }
 }
 /**
  * Convert second to HH::MM::SS format
  */
-function secondToHHMMSSFormat($seconds) {
+function secondToHHMMSSFormat($seconds)
+{
     $t = round($seconds);
-    return sprintf('%02d:%02d:%02d', ($t/3600),($t/60%60), $t%60);
-  }
+    return sprintf('%02d:%02d:%02d', ($t / 3600), ($t / 60 % 60), $t % 60);
+}
