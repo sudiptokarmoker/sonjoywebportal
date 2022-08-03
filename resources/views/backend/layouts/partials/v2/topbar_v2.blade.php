@@ -1,7 +1,7 @@
 <!-- LOGO -->
 <div class="topbar-left">
     <a href="{{ route('admin.dashboard') }}" class="logo">
-        <span><img src="{{ asset('backend/assets_v2/images/logo.png') }}" class="logo-name img-fluid"></span>
+        <span><img src="{{ asset('public/backend/assets_v2/images/logo.png') }}" class="logo-name img-fluid"></span>
     </a>
 </div>
 
@@ -9,7 +9,7 @@
     <ul class="nav navbar-nav">
         <li class="nav-item">
             <button class="button-menu-mobile open-left waves-light waves-effect">
-                <img src="{{ asset('backend/assets_v2/images/icon/toggle.png') }}" class="top-toggle img-fluid">
+                <img src="{{ asset('public/backend/assets_v2/images/icon/toggle.png') }}" class="top-toggle img-fluid">
             </button>
         </li>
     </ul>
@@ -26,7 +26,7 @@
                 @if(isset($profileImage) && file_exists('storage/images/profile_image/thumb/'.$profileImage))
                 <img src="{{ asset('storage/images/profile_image/thumb/'.$profileImage) }}" alt="" title="{{ auth()->user()->firstname }}" width="60" />
                 @else
-                <img src="{{ asset('backend/assets_v2/images/users/avatar-1.jpg') }}" alt="user" class="top-avatar img-circle">
+                <img src="{{ asset('public/backend/assets_v2/images/users/avatar-1.jpg') }}" alt="user" class="top-avatar img-circle">
                 @endif
                 <span class="name-avatar">{{ Auth::user()->full_name }}<i class="icofont-thin-down"></i></span>
             </a>
