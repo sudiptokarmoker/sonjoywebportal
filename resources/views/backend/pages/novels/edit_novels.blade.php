@@ -53,6 +53,17 @@ Edit novels
                                 <input type="file" class="form-control-file" id="posts_image" name="posts_image"/>
                                 @endif
                             </div>
+
+                            <div class="form-row">
+                                @if($novels_edit_obj['posts_media'] && $novels_edit_obj['posts_media']['posts_file'] && file_exists('storage/novels/'.$novels_edit_obj['posts_media']['posts_file']))
+                                    <label for="posts_image">Upload New Novels Doc Files (PDF)</label>
+                                    <input type="file" class="form-control-file" id="posts_image" name="posts_file"/>
+                                @else
+                                <label for="posts_file">Upload Novels Doc Files (PDF)</label>
+                                <input type="file" class="form-control-file" id="posts_image" name="posts_file"/>
+                                @endif
+                            </div>
+                            
                             <div class="form-group">
                                 <input type="hidden" name="song_id" value="{{ $novels_edit_obj['id'] }}" />
                                 <button type="submit" class="btn btn-primary mt-4 pr-4 pl-4">Edit Novels</button>

@@ -21,6 +21,7 @@ use App\Http\Controllers\Backened\NovelsController;
 
 use App\Http\Controllers\Backened\UsersController;
 use App\Http\Controllers\TestController;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,10 +33,16 @@ use App\Http\Controllers\TestController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::redirect('/', '/admin');
+//Route::redirect('/', '/admin');
 /**
  * open route for admin dashboard
  */
+//--**** shahriar controller start
+Route::get('/', [HomeController::class, 'index'])->name('front.home');
+Route::get('/artist', [HomeController::class, 'artist'])->name('front.artist');
+Route::get('/front.artistList/{id}/{name}', [HomeController::class, 'artistList'])->name('front.artistList');
+Route::get('/artistDetail/{id}', [HomeController::class, 'artistDetail'])->name('front.artistDetail');
+//--** shahriar controller end
 Route::get('/admin/login', [LoginController::class, 'showLoginForm'])->name('admin.login');
 Route::get('/admin/logout', [LoginController::class, 'logout'])->name('admin.logout');
 Route::post('/admin/login/submit', [LoginController::class, 'login'])->name('admin.login.submit');
