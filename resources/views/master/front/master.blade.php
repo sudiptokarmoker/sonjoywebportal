@@ -7,10 +7,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Sonjoyweb Portal</title>
 
-    <link href="{{asset('/')}}frontend/assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{asset('/')}}public/frontend/assets/css/bootstrap.min.css" rel="stylesheet">
 {{--    <link href="bootstrap.css" rel="stylesheet">--}}
 
-    <link href="{{asset('/')}}frontend/assets/css/style.css" rel="stylesheet">
+    <link href="{{asset('/')}}public/frontend/assets/css/style.css" rel="stylesheet">
 
 </head>
 <body>
@@ -47,7 +47,7 @@
     <div class="container">
         <div class="row flex-lg-row-reverse align-content-center g-5">
             <div class="col-10 col-sm-8 col-lg-6">
-                <img src="{{asset('/')}}frontend/assets/images/sonjoy-chakraborty.jpg" alt="" class="hero">
+                <img src="{{asset('/')}}public/frontend/assets/images/sonjoy-chakraborty.jpg" alt="" class="hero">
             </div>
             <div class="col-lg-6">
                 <h2 class="text">আমার ওয়েব পোর্টাল আপনাকে স্বাগতম </h2>
