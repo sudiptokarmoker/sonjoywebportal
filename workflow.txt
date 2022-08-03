@@ -95,3 +95,7 @@ updated on : 19.07.2022
 updated on : 20.07.2022
 - now files is being uploaded
 - edit the novels
+============================
+
+- live the site to hostgator
+- check the all are working there

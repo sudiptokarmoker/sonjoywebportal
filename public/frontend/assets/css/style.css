@@ -1,0 +1,33 @@
+@font-face {
+    font-family: SolaimanLipi;
+    src: url(fonts/SolaimanLipi.ttf);
+}
+body{
+    font-family: SolaimanLipi;
+}
+.homeBody
+{
+    background-image: url("RT2.jpg");
+    background-size: cover;
+}
+.artistBody
+{
+    background-image: url("RTagore.jpg");
+    background-size: cover;
+}
+img.hero
+{
+    height: 400px;
+    width: 540px;
+}
+
+.bgFooter
+{
+    background-color:snow;
+}
+.bgBody
+{
+    background-color: ButtonShadow;
+}
+
+.main-navmenu li a{font-family: Arial, Helvetica, sans-serif !important; text-transform: uppercase;}

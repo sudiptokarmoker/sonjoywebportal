@@ -1,7 +1,6 @@
 @extends('master.front.master')
 
 @section('body')
-
     <section class="py-5 bgFooter">
         <div class="container">
             <div class="row">
