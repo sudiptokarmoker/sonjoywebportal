@@ -99,3 +99,9 @@ updated on : 20.07.2022
 
 - live the site to hostgator
 - check the all are working there
+
+===================================
+date: 03.08.2022
+- tomorrow work on admin panel fixing live website
+- work on annother rest module at backend
+- fixing frontend site 
