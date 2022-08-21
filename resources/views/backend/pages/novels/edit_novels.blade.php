@@ -8,8 +8,8 @@ Edit novels
 @section('content')
 <div class="container-fluid">
     <div class="row">
-        <div class="col-lg-12">
             <div class="page-title-box">
+        <div class="col-lg-12">
                 <h4 class="page-title">Edit novels</h4>
                 <!-- breadcumbs -->
                 @include('backend.layouts.partials.v2.breadcumbs_v2')
@@ -44,8 +44,8 @@ Edit novels
                                 <label for="description">Content</label>
                             </div>
                             <div class="form-row">
-                                @if($novels_edit_obj['posts_media'] && $novels_edit_obj['posts_media']['posts_image'] && file_exists('storage/images/posts_image/'.$novels_edit_obj['posts_media']['posts_image']))
-                                    <img src="{{ asset('storage/images/posts_image/'.$novels_edit_obj['posts_media']['posts_image']) }}" alt="" title="" width="60"/>
+                                @if($novels_edit_obj['posts_media'] && $novels_edit_obj['posts_media']['posts_image'] && file_exists('public/storage/images/posts_image/'.$novels_edit_obj['posts_media']['posts_image']))
+                                    <img src="{{ asset('public/storage/images/posts_image/'.$novels_edit_obj['posts_media']['posts_image']) }}" alt="" title="" width="60"/>
                                     <label for="posts_image">Upload New Posts Image</label>
                                     <input type="file" class="form-control-file" id="posts_image" name="posts_image"/>
                                 @else
@@ -55,12 +55,12 @@ Edit novels
                             </div>
 
                             <div class="form-row">
-                                @if($novels_edit_obj['posts_media'] && $novels_edit_obj['posts_media']['posts_file'] && file_exists('storage/novels/'.$novels_edit_obj['posts_media']['posts_file']))
+                                @if($novels_edit_obj['posts_media'] && $novels_edit_obj['posts_media']['posts_file'] && file_exists('public/storage/novels/'.$novels_edit_obj['posts_media']['posts_file']))
                                     <label for="posts_image">Upload New Novels Doc Files (PDF)</label>
-                                    <input type="file" class="form-control-file" id="posts_image" name="posts_file"/>
+                                    <input type="file" class="form-control-file" id="posts_file" name="posts_file"/>
                                 @else
                                 <label for="posts_file">Upload Novels Doc Files (PDF)</label>
-                                <input type="file" class="form-control-file" id="posts_image" name="posts_file"/>
+                                <input type="file" class="form-control-file" id="posts_file" name="posts_file"/>
                                 @endif
                             </div>
                             

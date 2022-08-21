@@ -105,29 +105,31 @@ class NovelsRepository implements NovelsRepositoryInterface
     }
     public function update(array $data, $id)
     {
+        //$postsModelObj = PostsModel::findOrFail($id);
         $postsModelObj = PostsModel::findOrFail($id);
         /**
          * edit notation images
          */
+         
+        $postsImageFilesInfo = $postsModelObj->posts_media && $postsModelObj->posts_media->posts_image ? $postsModelObj->posts_media->posts_image : null;
+        $postsFileInfo = $postsModelObj->posts_media && $postsModelObj->posts_media->posts_file ? $postsModelObj->posts_media->posts_file : null;
 
-        $postsImageFilesInfo = $postsModelObj->posts_media && $postsModelObj->posts_media->posts_images ? $postsModelObj->posts_media->posts_images : null;;
-        $postsFileInfo = $postsModelObj->posts_media && $postsModelObj->posts_media->posts_file ? $postsModelObj->posts_media->posts_file : null;;
-
-        if (isset($data['posts_images'])) {
-            if (Storage::disk('public')->exists('images/posts_images/' . $postsModelObj->posts_media->posts_images)) {
-                Storage::disk('public')->delete('images/posts_images/' . $postsModelObj->posts_media->posts_images);
+        //if (isset($data['posts_images'])) {
+        if (isset($data['posts_image'])) {          
+            if (Storage::disk('public')->exists('images/posts_image/' . $postsModelObj->posts_media->posts_image)) {
+                Storage::disk('public')->delete('images/posts_image/' . $postsModelObj->posts_media->posts_image);
             }
-            $input_file = $data['posts_images']->getClientOriginalName();
+            $input_file = $data['posts_image']->getClientOriginalName();
             $original_file_name_withtout_extension = pathinfo($input_file, PATHINFO_FILENAME);
-            $postsImageFilesInfo = seoUrl($original_file_name_withtout_extension) . '-' . set_unique_image_file_name_on_save(\Illuminate\Support\Str::uuid(), $data['posts_images']->extension());
-            $data['posts_images']->storeAs('images/posts_images', $postsImageFilesInfo, 'public');
+            $postsImageFilesInfo = seoUrl($original_file_name_withtout_extension) . '-' . set_unique_image_file_name_on_save(\Illuminate\Support\Str::uuid(), $data['posts_image']->extension());
+            $data['posts_image']->storeAs('images/posts_image', $postsImageFilesInfo, 'public');
             // update db
             PostsMediaModel::where('post_id', $id)
             ->update([
-                'posts_images' => $postsImageFilesInfo,
+                'posts_image' => $postsImageFilesInfo,
             ]);
         }
-       // for posts file
+       // for posts file    
        if (isset($data['posts_file'])) {
             if (Storage::disk('public')->exists('novels/' . $postsModelObj->posts_media->posts_file)) {
                 Storage::disk('public')->delete('novels/' . $postsModelObj->posts_media->posts_file);
@@ -155,9 +157,9 @@ class NovelsRepository implements NovelsRepositoryInterface
     public function delete($id){
         $postsModelObj = PostsModel::findOrFail($id);
         // delete the notation images here
-        if ($postsModelObj->posts_media && $postsModelObj->posts_media->posts_images) {
-            if (Storage::disk('public')->exists('images/posts_images/' . $postsModelObj->posts_media->posts_images)) {
-                Storage::disk('public')->delete('images/posts_images/' . $postsModelObj->posts_media->posts_images);
+        if ($postsModelObj->posts_media && $postsModelObj->posts_media->posts_image) {
+            if (Storage::disk('public')->exists('images/posts_image/' . $postsModelObj->posts_media->posts_image)) {
+                Storage::disk('public')->delete('images/posts_image/' . $postsModelObj->posts_media->posts_image);
             }
         }
         if ($postsModelObj->posts_media && $postsModelObj->posts_media->posts_file) {

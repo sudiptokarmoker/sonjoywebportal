@@ -48,8 +48,8 @@
 
 
     <!-- dataTables js  -->
-    <script src="{{ asset('backend/assets_v2/js/dataTables.js') }}"></script>
-    <script src="{{ asset('backend/assets_v2/js/datatables.button.js') }}"></script>
+    <script src="{{ asset('public/backend/assets_v2/js/dataTables.js') }}"></script>
+    <script src="{{ asset('public/backend/assets_v2/js/datatables.button.js') }}"></script>
 
 
     <!-- chart js  -->
@@ -58,11 +58,11 @@
     <script src="{{ asset('backend/assets_v2/js/animated.js') }}"></script>
     <script src="{{ asset('backend/assets_v2/js/chart-custom.js') }}"></script> --}}
     <!--  js -->
-    <script src="{{ asset('backend/assets_v2/js/waves.js') }}"></script>
-    <script src="{{ asset('backend/assets_v2/js/jquery.app.js') }}"></script>
-    <script src="{{ asset('backend/assets_v2/js/functions.js') }}"></script>
+    <script src="{{ asset('public/backend/assets_v2/js/waves.js') }}"></script>
+    <script src="{{ asset('public/backend/assets_v2/js/jquery.app.js') }}"></script>
+    <script src="{{ asset('public/backend/assets_v2/js/functions.js') }}"></script>
 
-    <script src="{{ asset('backend/assets_v2/js/common-script.js') }}"></script> 
+    <script src="{{ asset('public/backend/assets_v2/js/common-script.js') }}"></script> 
 
     <!-- on_demand_footer_script_if_exist is for if any script need to load on this master template. example : chart.js related script -->
     @yield('on_demand_footer_script_if_exist')

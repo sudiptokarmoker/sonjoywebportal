@@ -1,16 +1,16 @@
 @extends('backend.layouts.master_v2_editor')
 @section('title')
-Novels Verses
+Create Novels
 @endsection
 @section('active_breadcumbs_title')
-Novels Verses
+Create Novels
 @endsection
 @section('content')
 <div class="container-fluid">
     <div class="row">
         <div class="col-lg-12">
             <div class="page-title-box">
-                <h4 class="page-title">Novels Verses</h4>
+                <h4 class="page-title">Create Novels</h4>
                 <!-- breadcumbs -->
                 @include('backend.layouts.partials.v2.breadcumbs_v2')
                 <!-- end of breadcumbs -->

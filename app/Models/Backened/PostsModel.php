@@ -25,6 +25,6 @@ class PostsModel extends Model
     }
     public function posts_media()
     {
-        return $this->hasOne(PostsMediaModel::class, 'post_id');
+        return $this->hasOne(PostsMediaModel::class, 'post_id', 'id');
     }
 }
