@@ -48,6 +48,9 @@ class RolePermissionSeeder extends Seeder
             ['group_name' => 'verses_category'], //13
 
             ['group_name' => 'novels'], //14
+
+            ['group_name' => 'stories'], //15
+            ['group_name' => 'essays'], //16
         ]);
 
         $permissions = [
@@ -204,6 +207,30 @@ class RolePermissionSeeder extends Seeder
                     'novels.edit.form.view',
                     'novels.update',
                     'novels.delete',
+                ],
+            ],
+            // novels
+            [
+                'group_id' => 15,
+                'permissions' => [
+                    'stories.list',
+                    'stories.create.form.view',
+                    'stories.save',
+                    'stories.edit.form.view',
+                    'stories.update',
+                    'stories.delete',
+                ],
+            ],
+            // essays
+            [
+                'group_id' => 16,
+                'permissions' => [
+                    'essays.list',
+                    'essays.create.form.view',
+                    'essays.save',
+                    'essays.edit.form.view',
+                    'essays.update',
+                    'essays.delete',
                 ],
             ],
         ];

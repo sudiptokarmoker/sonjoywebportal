@@ -106,3 +106,14 @@ date: 03.08.2022
 - work on annother rest module at backend
 - fixing frontend site 
 =====================================
+date: 21.08.2022
+phase # backened
+- make admin moduel for stories
+- make admin moduel for essays
+
+
+tomorrow start work on here : (22.08.2022)
+- just edit the content (copy paste) 
+app\Http\Controllers\Backened\StoriesCategoryController.php
+
+- make same for essays

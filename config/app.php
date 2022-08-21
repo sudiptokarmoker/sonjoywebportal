@@ -188,6 +188,9 @@ return [
         App\Providers\VersesCategoryServiceProvider::class,
 
         App\Providers\NovelsServiceProvider::class,
+
+        App\Providers\StoriesServiceProvider::class,
+        App\Providers\StoriesCategoryServiceProvider::class,
         
         Yajra\DataTables\DataTablesServiceProvider::class,
         

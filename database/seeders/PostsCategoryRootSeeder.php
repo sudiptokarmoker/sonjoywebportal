@@ -58,6 +58,14 @@ class PostsCategoryRootSeeder extends Seeder
                     'parent_id' => 0,
                     'created_by_user_id' => $user_data['id'],
                 ],
+                [
+                    'category_name' => 'essays',
+                    'category_name_bangla' => 'প্রবন্ধ',
+                    'category_slug' => 'essays',
+                    'category_slug_bangla' => 'প্রবন্ধ',
+                    'parent_id' => 0,
+                    'created_by_user_id' => $user_data['id'],
+                ],
             );
             foreach($param as $row){
                 PostsCategoryModel::create([
