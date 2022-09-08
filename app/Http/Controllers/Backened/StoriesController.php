@@ -18,7 +18,29 @@ class StoriesController extends Controller
         $this->middleware(function ($request, $next) {
             $this->user = Auth::user();
             return $next($request);
-        });
+        });Dhaka, 2022-07-22
+
+Dear Sir,
+
+I’m excited to apply for the Senior Software Engineer PHPLaravelposition at Axilweb. I
+am working more than 10 Years+ in the web technology, and I am passionate about doing a great
+job and out of the skills you’re looking for.
+
+
+I’m very interested in beginning a career in the Axilwebcareer field, and I something motivates
+to Join In. I believe I’ll make an excellent in this position - Senior Software Engineer PHPLaravel. Here are the following accomplishments of my work:
+
+https://vioresume.com(laravel, angular)
+https://visionboarder.com(yii, nodejs, javascript)
+http://www.customrecall.com(magento 1.9)
+https://www.upack.in(magento 1.9)
+https://dynamicgroup-bd.com (php)
+
+Thank You Sir
+Best Regards
+Sudipto Karmoker
+Full Stack Developer
+
     }
     /**
      * Display a listing of the resource.
